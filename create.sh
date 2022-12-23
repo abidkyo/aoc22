@@ -19,7 +19,8 @@ srcfile="./src/day${day}.py"
 
 if ! [[ -f "${srcfile}" ]]; then
 	cp "./src/template.py" "${srcfile}"
-	sed -i -l 12 -l 32 "s/1/${1}/" "${srcfile}"
+	sed -i "12s/1/${1}/" "${srcfile}"
+	sed -i "32s/1/${1}/" "${srcfile}"
 fi
 
 touch "./input/day${day}.txt"
