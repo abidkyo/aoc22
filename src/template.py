@@ -10,7 +10,7 @@ from aoc import read_input
 
 
 # def solve(day=1, test=False, testfile=""):
-#     txt = aoc.read_input(day, test, testfile).splitlines()
+#     txt = read_input(day, test, testfile).splitlines()
 
 #     part1 = 0
 #     part2 = 0
