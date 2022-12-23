@@ -5,7 +5,7 @@ Helper Function for AOC.
 """
 
 
-from itertools import chain, repeat, islice
+from itertools import chain, repeat, islice, product
 from copy import deepcopy
 import math
 import re
@@ -33,6 +33,14 @@ def identity_matrix(n: int, val: int = 1):
                 mat[i].append(0)
 
     return mat
+
+
+def get_neighbour(x, y, amount=4):
+    assert amount in {4, 8, 9}
+
+    for dx, dy in product([-1, 0, 1], repeat=2):
+        if (amount == 4 and abs(dx) != abs(dy)) or (amount == 8 and not dx == dy == 0) or (amount == 9):
+            yield (x + dx, y + dy)
 
 
 # todo: testfile name is unnecessary
