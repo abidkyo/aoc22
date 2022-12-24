@@ -22,6 +22,15 @@ def map_list(type, iterable):
     return list(map(type, iterable))
 
 
+def sign(num: int):
+    if num > 0:
+        return 1
+    elif num < 0:
+        return -1
+    else:
+        return 0
+
+
 def identity_matrix(n: int, val: int = 1):
     mat = []
     for i in range(n):
