@@ -14,6 +14,19 @@ import re
 infinity = float("inf")
 
 
+def cat(iterable):
+    return "".join(iterable)
+
+
+def printn(obj):
+    print(*obj, sep="\n")
+
+
+def print2d(grid: list):
+    for row in grid:
+        print(cat(row))
+
+
 def map_tuple(type, iterable):
     return tuple(map(type, iterable))
 
