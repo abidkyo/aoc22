@@ -27,12 +27,12 @@ def print2d(grid: list):
         print(cat(row))
 
 
-def map_tuple(type, iterable):
-    return tuple(map(type, iterable))
+def map_tuple(f, iterable):
+    return tuple(map(f, iterable))
 
 
-def map_list(type, iterable):
-    return list(map(type, iterable))
+def map_list(f, iterable):
+    return list(map(f, iterable))
 
 
 def sign(num: int):
