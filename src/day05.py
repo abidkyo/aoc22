@@ -53,8 +53,8 @@ def move_fifo(stacks, amount, source, dest):
     stacks[source] = stacks[source][:-amount]
 
 
-def solve(day=5, test=False, testfile=""):
-    stacks, moves = read_input(day, test, testfile).split("\n\n")
+def solve(day=5, test=False):
+    stacks, moves = read_input(day, test).split("\n\n")
 
     stacks = stacks.splitlines()
     moves = moves.splitlines()

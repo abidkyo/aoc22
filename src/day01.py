@@ -12,9 +12,9 @@ from aoc import read_input
 # ------------------------------------------------------------------------------
 
 
-def solve(day=1, test=False, testfile=""):
+def solve(day=1, test=False):
     # split by blank line to get section
-    sections = read_input(day, test, testfile).split("\n\n")
+    sections = read_input(day, test).split("\n\n")
 
     # calc sum for each section
     total = []

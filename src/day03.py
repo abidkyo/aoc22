@@ -62,8 +62,8 @@ def solve_part2(strings: list):
     return points
 
 
-def solve(day=3, test=False, testfile=""):
-    txt = read_input(day, test, testfile).splitlines()
+def solve(day=3, test=False):
+    txt = read_input(day, test).splitlines()
 
     part1 = solve_part1(txt)
     part2 = solve_part2(txt)

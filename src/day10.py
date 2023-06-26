@@ -21,12 +21,12 @@ def parse_instruction(txt: str):
             yield from [0, int(instr[1])]
 
 
-def solve(day=10, test=False, testfile=""):
+def solve(day=10, test=False):
     """
     Part1: Calculate signal strength.
     Part2: Draw on CRT.
     """
-    txt = read_input(day, test, testfile).splitlines()
+    txt = read_input(day, test).splitlines()
     data = parse_instruction(txt)
 
     # crt size is 40 * 6

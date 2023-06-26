@@ -88,8 +88,8 @@ def solve_part2(strategy: list):
     return points
 
 
-def solve(day=2, test=False, testfile=""):
-    strategy = read_input(day, test, testfile).splitlines()
+def solve(day=2, test=False):
+    strategy = read_input(day, test).splitlines()
 
     strategy = map_list(parse_move, strategy)
 

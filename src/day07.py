@@ -83,8 +83,8 @@ def parse_content(content: list) -> Directory:
     return root
 
 
-def solve(day=7, test=False, testfile=""):
-    content = read_input(day, test, testfile).splitlines()
+def solve(day=7, test=False):
+    content = read_input(day, test).splitlines()
 
     root = parse_content(content)
 

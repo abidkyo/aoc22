@@ -24,8 +24,8 @@ def find_distinct_chars(string: str, n: int):
             return idx
 
 
-def solve(day=6, test=False, testfile=""):
-    string = read_input(day, test, testfile)
+def solve(day=6, test=False):
+    string = read_input(day, test)
 
     part1 = find_distinct_chars(string, 4)
     part2 = find_distinct_chars(string, 14)

@@ -56,7 +56,7 @@ def execute_round(monkeys: Monkey, part2: bool = False, mod: int = 1):
         m.items = []
 
 
-def solve(day=11, test=False, testfile=""):
+def solve(day=11, test=False):
     txt = read_input(day, test).split("\n\n")
 
     m1 = map_list(parse_monkey, txt)

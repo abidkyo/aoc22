@@ -20,8 +20,8 @@ def get_bigger_idxs(direction: list, element: int):
     return next((idx for idx, val in enumerate(direction, 1) if val >= element), infinity)
 
 
-def solve(day=8, test=False, testfile=""):
-    txt = read_input(day, test, testfile).splitlines()
+def solve(day=8, test=False):
+    txt = read_input(day, test).splitlines()
 
     # create matrix from the txt
     forest = map_list(integers, txt)

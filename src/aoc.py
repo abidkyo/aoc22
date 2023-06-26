@@ -65,13 +65,11 @@ def get_neighbour(x, y, amount=4):
             yield (x + dx, y + dy)
 
 
-# todo: testfile name is unnecessary
-def read_input(day: int, test: bool, testfile: str) -> str:
+def read_input(day: int, test: bool) -> str:
     # filename = "input/day01.txt"
     # filename = "input/day01_test.txt"
-    # filename = "input/day01_test1.txt"
     filename = f"input/day{day:02d}"
-    filename += f"_test{testfile}" if test else ""
+    filename += "_test" if test else ""
     filename += ".txt"
 
     with open(filename, "r") as f:

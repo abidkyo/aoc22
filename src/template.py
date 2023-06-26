@@ -9,8 +9,8 @@ from aoc import read_input
 # ------------------------------------------------------------------------------
 
 
-# def solve(day=1, test=False, testfile=""):
-#     txt = read_input(day, test, testfile).splitlines()
+# def solve(day=1, test=False):
+#     txt = read_input(day, test).splitlines()
 
 #     part1 = 0
 #     part2 = 0

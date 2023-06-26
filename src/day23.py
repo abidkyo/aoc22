@@ -106,13 +106,13 @@ def calc_empty(points):
     return (row[-1] - row[0] + 1) * (col[-1] - col[0] + 1) - len(points)
 
 
-def solve(day=23, test=False, testfile=""):
+def solve(day=23, test=False):
     """
     Part1: Empty points count in 10th round.
     Part2: Nth round where no element is moving.
     """
 
-    txt = read_input(day, test, testfile).splitlines()
+    txt = read_input(day, test).splitlines()
     points = parse_input(txt)
 
     # direction vector to be considered

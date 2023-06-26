@@ -62,8 +62,8 @@ def solve_part2(packets):
     return index_two * index_six
 
 
-def solve(day=13, test=False, testfile=""):
-    txt = read_input(day, test, testfile).split("\n\n")
+def solve(day=13, test=False):
+    txt = read_input(day, test).split("\n\n")
 
     packets = map_list(parse_packet, txt)
 

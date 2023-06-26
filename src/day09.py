@@ -35,8 +35,8 @@ def move_snake(data: list, tail_size: int) -> set:
     return tail_pos
 
 
-def solve(day=9, test=False, testfile=""):
-    txt = read_input(day, test, testfile).splitlines()
+def solve(day=9, test=False):
+    txt = read_input(day, test).splitlines()
     data = map_list(str.split, txt)
 
     part1 = len(move_snake(data, 1))
