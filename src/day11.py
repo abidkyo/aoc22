@@ -6,9 +6,6 @@ Move elements between list.
 Timing:
 python3 : ~9.63s
 
-old:
-act : 4.883
-
 """
 
 from dataclasses import dataclass
@@ -44,7 +41,6 @@ def parse_monkey(txt: str):
 
 def execute_round(monkeys: Monkey, part2: bool = False, mod: int = 1):
     for m in monkeys:
-        # increase item counter
         m.counter += len(m.items)
 
         for item in m.items:
@@ -53,6 +49,7 @@ def execute_round(monkeys: Monkey, part2: bool = False, mod: int = 1):
             else:
                 new = eval(m.oper)(item) // 3
 
+            # move item to another monkey
             dest = m.true if new % m.test == 0 else m.false
             monkeys[dest].items.append(new)
 
@@ -77,6 +74,7 @@ def solve(day=11, test=False, testfile=""):
     for _ in range(10000):
         execute_round(m2, True, mod)
 
+    # multiply two biggest counter
     part1 = prod(sorted(m.counter for m in m1)[-2:])
     part2 = prod(sorted(m.counter for m in m2)[-2:])
 

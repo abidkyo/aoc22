@@ -18,7 +18,7 @@ exec=python3
 while getopts "p" opt; do
 	case $opt in
 	p)
-		exec=pypy
+		exec=pypy3
 		echo "using pypy"
 		;;
 
