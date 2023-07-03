@@ -4,11 +4,11 @@
 Find path of falling rocks.
 
 Timing:
-python3: ~100ms
+python3: ~55ms
 
 """
 
-from aoc import get_digits, map_list, read_input, tuple_sum
+from aoc import get_digits, map_list, read_input
 
 # ------------------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ def parse_rocks(txt: list) -> set:
             # create rock
             for x in range(x_min, x_max + 1):
                 for y in range(y_min, y_max + 1):
-                    rocks.add((x, y))
+                    rocks.add(complex(x, y))
 
     return rocks
 
@@ -42,11 +42,11 @@ def sand_pour(start, p1):
 
     if start in rocks:
         # print("start", start, start[1], start[1] >= limit)
-        return start[1] == floor
+        return start.imag == floor
 
     # down, left, right
-    for a in ((0, 1), (-1, 1), (1, 1)):
-        next = tuple_sum(start, a)
+    for a in (0, -1, 1):
+        next = start + a + 1j
 
         # stop if hit floor, return true
         # part2: just keep pouring until start (no return)
@@ -62,12 +62,12 @@ def solve(day=14, test=False):
     data = read_input(day, test).splitlines()
     rocks = parse_rocks(data)
 
-    start = (500, 0)
-    floor = max(rock[1] for rock in rocks) + 2  # floor is 2 level below the lowest rock
+    start = 500
+    floor = int(max(rock.imag for rock in rocks) + 2)  # floor is 2 level below the lowest rock
 
     # add floor
-    for x in range(start[0] - floor, start[0] + floor + 1):
-        rocks.add((x, floor))
+    for x in range(start - floor, start + floor + 1):
+        rocks.add(complex(x, floor))
 
     rock_count = len(rocks)
 
