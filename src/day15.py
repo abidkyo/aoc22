@@ -7,6 +7,10 @@ Timing:
 python3: ~6.40s
 pypy: ~3.65s
 
+Using complex numbers instead of tuple:
+python3: ~8.30s
+pypy: ~3.01s
+
 """
 
 from aoc import get_digits, manhattan_distance, map_list, read_input
@@ -37,11 +41,13 @@ def find_edges_at_row(sensors: list, row: int) -> list:
         # if the area covered by the sensor intercept that row,
         # store the left- and right-edge x-coordinate (edge range)
         if points >= 0:
-            edges.add((sx - points, sx + points))
+            # edges.add((sx - points, sx + points))
+            edges.add(complex(sx - points, sx + points))
 
     # return the edges sorted in ascending order
     # this will only sort by the left-edge values
-    return sorted(edges)
+    # return sorted(edges)
+    return sorted(edges, key=lambda x: x.real)
 
 
 def find_gap(edges: list) -> int:
@@ -49,7 +55,10 @@ def find_gap(edges: list) -> int:
     # only need to track the right-edge value since 'edges' is sorted
 
     most_right = 0
-    for left, right in edges:
+    # for left, right in edges:
+    for edge in edges:
+        left, right = edge.real, edge.imag
+
         # a gap has diff of more than 1
         if (left - most_right) > 1:
             # return the gap position (+1)
@@ -69,8 +78,10 @@ def solve_part1(sensors: list, row: int) -> int:
     edges = find_edges_at_row(sensors, row)
 
     # get the min left-edge and max right-edge values
-    leftx, _ = edges[0]  # this should be fine because 'edges' is sorted
-    _, rightx = max(edges, key=lambda x: x[1])
+    # leftx, _ = edges[0]  # this should be fine because 'edges' is sorted
+    # _, rightx = max(edges, key=lambda x: x[1])
+    leftx = edges[0].real  # this should be fine because 'edges' is sorted
+    rightx = max(edges, key=lambda x: x.imag).imag
 
     # subtract to get the number of point covered
     num_point = rightx - leftx
