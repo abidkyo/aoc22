@@ -21,6 +21,7 @@
 | [15](https://adventofcode.com/2022/day/15) | Manhattan distance and range  | [day15.py](src/day15.py) |
 | [16](https://adventofcode.com/2022/day/16) | Floyd-Warshall and DFS        | [day16.py](src/day16.py) |
 | [17](https://adventofcode.com/2022/day/17) | Tetris \.\. and Cache         | [day17.py](src/day17.py) |
+| [18](https://adventofcode.com/2022/day/18) | Area around points            | [day18.py](src/day18.py) |
 | [23](https://adventofcode.com/2022/day/23) | Moving elements in a grid     | [day23.py](src/day23.py) |
 
 ### Note
